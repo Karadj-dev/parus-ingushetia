@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Парус-Ингушетия</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header styles */
+      header {
+        background-color: rgba(255, 255, 255, 0.95);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c3e50;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: #3498db;
+      }
+
+      .logo span {
+        color: #3498db;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #3498db;
+      }
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .phone {
+        font-weight: 700;
+        color: #2c3e50;
+        margin-right: 15px;
+      }
+
+      .btn {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+        display: inline-block;
+      }
+
+      .btn:hover {
+        background-color: #2980b9;
+      }
+
+      /* Hero section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+            no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .hero-btns {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .btn-large {
+        padding: 15px 30px;
+        font-size: 18px;
+      }
+
+      .btn-transparent {
+        background-color: transparent;
+        border: 2px solid white;
+      }
+
+      .btn-transparent:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Services section */
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 36px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      .section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        font-size: 50px;
+        color: #3498db;
+        margin-bottom: 20px;
+      }
+
+      .service-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .service-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .service-link:hover {
+        text-decoration: underline;
+      }
+
+      /* About section */
+      .about {
+        background-color: #fff;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* How it works section */
+      .how-it-works {
+        background-color: #f8f9fa;
+      }
+
+      .steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        flex-wrap: wrap;
+      }
+
+      .step {
+        flex-basis: calc(25% - 30px);
+        text-align: center;
+        padding: 30px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: #3498db;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 auto 20px;
+      }
+
+      /* Product section */
+      .product-section {
+        background: white;
+      }
+
+      .product-form {
+        background: #f8f9fa;
+        padding: 40px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #2c3e50;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Advantages section */
+      .advantages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .advantage {
+        padding: 30px 20px;
+        text-align: center;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .advantage i {
+        font-size: 40px;
+        color: #3498db;
+        margin-bottom: 20px;
+      }
+
+      .advantage h3 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      /* Reviews section */
+      .reviews {
+        background-color: #f8f9fa;
+      }
+
+      .reviews-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .review {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+      }
+
+      .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .review-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ddd;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #7f8c8d;
+      }
+
+      .review-rating {
+        color: #ffc107;
+        margin-left: auto;
+      }
+
+      /* Contact section */
+      .contact {
+        background-color: white;
+      }
+
+      .contact-content {
+        display: flex;
+        gap: 50px;
+      }
+
+      .contact-form {
+        flex: 1;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 8px;
+      }
+
+      .contact-info {
+        flex: 1;
+      }
+
+      .contact-details {
+        margin-bottom: 30px;
+      }
+
+      .contact-details p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-details i {
+        margin-right: 10px;
+        color: #3498db;
+        width: 20px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 50px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #3498db;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: #3498db;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .about-content,
+        .contact-content {
+          flex-direction: column;
+        }
+
+        .header-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          margin: 20px 0;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav ul li {
+          margin: 10px 15px;
+        }
+
+        .contact-info {
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .step {
+          flex-basis: calc(50% - 30px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .hero-btns {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .step {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a href="#" class="logo"
+            ><i class="fas fa-briefcase"></i>Парус<span>Ингушетия</span></a
+          >
+          <nav>
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Предложить услугу</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="contact-info">
+            <div class="phone">+7 (960) 432-80-22</div>
+            <a href="#contact-form" class="btn">Заказать консультацию</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Кадровые и бухгалтерские услуги</h1>
+          <p>Сайт техподдержки пользователей и ведение бухгалтерии</p>
+          <div class="hero-btns">
+            <a href="#services" class="btn btn-large">Наши услуги</a>
+            <a href="#product-form" class="btn btn-large btn-transparent"
+              >Предложить услугу</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Наши услуги</h2>
+          <p>Мы предлагаем комплексные решения</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <h3>Кадровый аудит</h3>
+            <p>
+              Анализ кадровой структуры и оптимизация процессов управления
+              персоналом
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <h3>Бухгалтерское сопровождение</h3>
+            <p>
+              Полное ведение бухгалтерского и налогового учета для вашего
+              бизнеса
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h3>Налоговое консультирование</h3>
+            <p>Профессиональные консультации по оптимизации налогообложения</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h3>Расчет заработной платы</h3>
+            <p>Начисление заработной платы, расчет отпускных и больничных</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h3>Кадровое делопроизводство</h3>
+            <p>
+              Оформление трудовых договоров, кадровых приказов и личных дел
+              сотрудников
+            </p>
+          </div>
+
+          <!-- Новые услуги Парус -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Парус 8</h3>
+            <p>Комплексная система автоматизации управления предприятием</p>
+            <a
+              href="http://178.177.40.139/ParusWeb/"
+              class="service-link"
+              target="_blank"
+              >Подробнее о Парус 8 →</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Парус 10</h3>
+            <p>
+              Корпоративная платформа для управления распределенными
+              предприятиями
+            </p>
+            <a
+              href="https://parusaltai.ru/parus10"
+              class="service-link"
+              target="_blank"
+              >Подробнее о Парус 10 →</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Парус Мониторинг</h3>
+            <p>
+              Система мониторинга ключевых показателей эффективности бизнеса
+            </p>
+            <a
+              href="https://46.16.229.146/"
+              class="service-link"
+              target="_blank"
+              >Подробнее о Парус Мониторинг →</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Парус Образование</h3>
+            <p>Комплексное решение для автоматизации учебных заведений</p>
+            <a
+              href="https://parusaltai.ru/parus8"
+              class="service-link"
+              target="_blank"
+              >Подробнее о Парус Образование →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about">
+      <div class="container">
+        <div class="section-title">
+          <h2>О нашей компании</h2>
+          <p>Почему выбирают нас</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Мы - команда профессионалов с многолетним опытом в области
+              кадрового менеджмента и бухгалтерского учета. Наша компания была
+              основана в 2005 году и за это время мы помогли более 500 компаниям
+              различного масштаба.
+            </p>
+            <p>
+              Наши специалисты регулярно проходят повышение квалификации и
+              следят за изменениями в законодательстве, чтобы предоставлять
+              нашим клиентам только актуальные и законные решения.
+            </p>
+            <p>
+              Мы ценим доверие наших клиентов и стремимся строить долгосрочные
+              партнерские отношения, основанные на взаимном уважении и
+              профессионализме.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="Наш офис"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section class="section how-it-works">
+      <div class="container">
+        <div class="section-title">
+          <h2>Как мы работаем</h2>
+          <p>Процесс сотрудничества с нашей компанией</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Заявка</h3>
+            <p>Вы оставляете заявку на сайте или звоните нам</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Консультация</h3>
+            <p>Мы анализируем ваши потребности и предлагаем решение</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Договор</h3>
+            <p>Заключаем договор и приступаем к работе</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Результат</h3>
+            <p>Вы получаете качественно выполненную работу в срок</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product-form" class="section product-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Предложить свою услугу</h2>
+          <p>Заполните форму, чтобы предложить нам сотрудничество</p>
+        </div>
+        <div class="product-form">
+          <form id="serviceForm">
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="service-type">Тип услуги</label>
+              <select id="service-type" name="service-type" required>
+                <option value="">Выберите тип услуги</option>
+                <option value="hr">Кадровые услуги</option>
+                <option value="accounting">Бухгалтерские услуги</option>
+                <option value="consulting">Консультационные услуги</option>
+                <option value="parus">Услуги по системе Парус</option>
+                <option value="other">Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service-description">Описание услуги</label>
+              <textarea
+                id="service-description"
+                name="service-description"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="experience">Опыт работы</label>
+              <input type="text" id="experience" name="experience" />
+            </div>
+            <div class="form-group">
+              <label for="file">Прикрепить резюме или портфолио (до 5MB)</label>
+              <input type="file" id="file" name="file" />
+            </div>
+            <button type="submit" class="btn btn-large">
+              Отправить предложение
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages">
+      <div class="container">
+        <div class="section-title">
+          <h2>Наши преимущества</h2>
+          <p>Почему клиенты выбирают сотрудничество с нами</p>
+        </div>
+        <div class="advantages-grid">
+          <div class="advantage">
+            <i class="fas fa-clock"></i>
+            <h3>Экономия времени</h3>
+            <p>
+              Мы берем на себя все рутинные процессы, чтобы вы могли
+              сосредоточиться на развитии бизнеса
+            </p>
+          </div>
+          <div class="advantage">
+            <i class="fas fa-ruble-sign"></i>
+            <h3>Экономия денег</h3>
+            <p>
+              Наши услуги обходятся дешевле, чем содержание штатного специалиста
+            </p>
+          </div>
+          <div class="advantage">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Надежность</h3>
+            <p>Мы несем ответственность за качество предоставляемых услуг</p>
+          </div>
+          <div class="advantage">
+            <i class="fas fa-user-check"></i>
+            <h3>Профессионализм</h3>
+            <p>В нашей команде работают только квалифицированные специалисты</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews">
+      <div class="container">
+        <div class="section-title">
+          <h2>Отзывы клиентов</h2>
+          <p>Что говорят о нас наши клиенты</p>
+        </div>
+        <div class="reviews-container">
+          <div class="review">
+            <div class="review-header">
+              <div class="review-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <h4>Джамалдин Гагиев</h4>
+                <p>Директор ООО "ТехноПром"</p>
+              </div>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p>
+              Сотрудничаем с компанией более 3 лет. Всегда оперативно решают
+              вопросы по кадровому делопроизводству и бухгалтерии. Рекомендую!
+            </p>
+          </div>
+          <div class="review">
+            <div class="review-header">
+              <div class="review-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <h4>Сулейм Евлоев</h4>
+                <p>CEO "Стартап Проект"</p>
+              </div>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p>
+              Обратились для подбора IT-специалистов. Нашли отличных кандидатов
+              в короткие сроки. Бухгалтерские услуги также на высшем уровне.
+            </p>
+          </div>
+          <div class="review">
+            <div class="review-header">
+              <div class="review-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <h4>Халид Кузьгов</h4>
+                <p>Главный бухгалтер "ТоргСервис"</p>
+              </div>
+              <div class="review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p>
+              Внедрили систему Парус 8 с помощью специалистов компании. Процесс
+              бухгалтерского учета стал значительно эффективнее.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-form" class="section contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Свяжитесь с нами</h2>
+          <p>Готовы ответить на все ваши вопросы</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="contact-name">Ваше имя</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="contact-name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="contact-email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Телефон</label>
+                <input type="tel" id="contact-phone" name="contact-phone" />
+              </div>
+              <div class="form-group">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-large">
+                Отправить сообщение
+              </button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <div class="contact-details">
+              <h3>Контактная информация</h3>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> г. Магас, ул.
+                Мочхо-базоркина, д. 18А
+              </p>
+              <p><i class="fas fa-phone"></i> +7 (960) 432-80-22</p>
+              <p><i class="fas fa-envelope"></i> Parusing@mail.ru</p>
+              <p><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>О компании</h3>
+            <p>
+              Профессиональные кадровые и бухгалтерские услуги для бизнеса
+              любого масштаба.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Услуги</h3>
+            <ul>
+              <li><a href="#">Подбор персонала</a></li>
+              <li><a href="#">Кадровый аудит</a></li>
+              <li><a href="#">Бухгалтерское сопровождение</a></li>
+              <li><a href="#">Налоговое консультирование</a></li>
+              <li>
+                <a href="https://parus.ru/parus8/" target="_blank">Парус 8</a>
+              </li>
+              <li>
+                <a href="https://parus.ru/parus10/" target="_blank">Парус 10</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Быстрые ссылки</h3>
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li>
+                <a href="https://parus.ru/solutions/monitoring/" target="_blank"
+                  >Парус Мониторинг</a
+                >
+              </li>
+              <li>
+                <a href="https://parus.ru/solutions/education/" target="_blank"
+                  >Парус Образование</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Социальные сети</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-vk"></i></a>
+              <a href="#"><i class="fab fa-telegram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Парус-Ингушетия. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Простая валидация формы
+      document
+        .getElementById("serviceForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Спасибо! Ваше предложение отправлено. Мы свяжемся с вами в ближайшее время."
+          );
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
